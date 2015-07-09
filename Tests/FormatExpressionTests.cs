@@ -1,40 +1,41 @@
 ﻿namespace NamedFormat.Tests
 {
-    using Xunit;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+    [TestClass]
     public class FormatExpressionTests
     {
-        [Fact]
+        [TestMethod]
         public void Format_WithExpressionReturningNull_DoesNotThrowException()
         {
             //arrange
             var expr = new FormatExpression("{foo}");
 
             //assert
-            Assert.Equal(string.Empty, expr.Eval(new { foo = (object)null }));
+            Assert.AreEqual(string.Empty, expr.Eval(new { foo = (object)null }));
         }
 
-        [Fact]
+        [TestMethod]
         public void Format_WithoutColon_ReadsWholeExpression()
         {
             //arrange
             var expr = new FormatExpression("{foo}");
 
             //assert
-            Assert.Equal("foo", expr.Expression);
+            Assert.AreEqual("foo", expr.Expression);
         }
 
-        [Fact]
+        [TestMethod]
         public void Format_WithColon_ParsesoutFormat()
         {
             //arrange
             var expr = new FormatExpression("{foo:#.##}");
 
             //assert
-            Assert.Equal("#.##", expr.Format);
+            Assert.AreEqual("#.##", expr.Format);
         }
 
-        [Fact]
+        [TestMethod]
         public void Eval_WithNamedExpression_EvalsPropertyOfExpression()
         {
             //arrange
@@ -44,10 +45,10 @@
             string result = expr.Eval(new { foo = 123 });
 
             //assert
-            Assert.Equal("123", result);
+            Assert.AreEqual("123", result);
         }
 
-        [Fact]
+        [TestMethod]
         public void Eval_WithNamedExpressionAndFormat_EvalsPropertyOfExpression()
         {
             //arrange
@@ -57,7 +58,7 @@
             string result = expr.Eval(new { foo = 1.23456 });
 
             //assert
-            Assert.Equal("1.23", result);
+            Assert.AreEqual("1.23", result);
         }
     }
 }

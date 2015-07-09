@@ -1,10 +1,11 @@
 ﻿namespace NamedFormat.Tests
 {
-    using Xunit;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+    [TestClass]
     public class LiteralFormatTests
     {
-        [Fact]
+        [TestMethod]
         public void Literal_WithEscapedCloseBraces_CollapsesDoubleBraces()
         {
             //arrange
@@ -12,10 +13,10 @@
             //act
             string result = literal.Eval(null);
             //assert
-            Assert.Equal("hello}world", result);
+            Assert.AreEqual("hello}world", result);
         }
 
-        [Fact]
+        [TestMethod]
         public void Literal_WithEscapedOpenBraces_CollapsesDoubleBraces()
         {
             //arrange
@@ -23,7 +24,7 @@
             //act
             string result = literal.Eval(null);
             //assert
-            Assert.Equal("hello{world", result);
+            Assert.AreEqual("hello{world", result);
         }
     }
 }
