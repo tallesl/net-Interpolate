@@ -1,7 +1,6 @@
-﻿using StringLib;
-using Xunit;
+﻿using Xunit;
 
-namespace UnitTests
+namespace NamedFormat.Tests
 {
     public class FormatExpressionTests
     {

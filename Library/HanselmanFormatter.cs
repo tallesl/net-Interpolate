@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Reflection;
 
-namespace StringLib
+namespace NamedFormat
 {
     /// <summary>
     /// Copied from http://www.hanselman.com/blog/CommentView.aspx?guid=fde45b51-9d12-46fd-b877-da6172fe1791

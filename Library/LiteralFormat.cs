@@ -1,4 +1,4 @@
-﻿namespace StringLib
+﻿namespace NamedFormat
 {
 public class LiteralFormat : ITextExpression
 {

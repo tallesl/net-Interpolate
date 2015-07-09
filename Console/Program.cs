@@ -1,9 +1,9 @@
-﻿using System;
-using System.Diagnostics;
-using StringLib;
+﻿using System.Diagnostics;
 
-namespace NamedStringFormatConsole
+namespace NamedFormat.Console
 {
+    using System;
+
     class Program
     {
         const int Iterations = 50000;

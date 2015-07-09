@@ -1,10 +1,10 @@
 ﻿Microsoft Visual Studio Solution File, Format Version 12.00
 
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NamedStringFormatConsole", "NamedStringFormatConsole\NamedStringFormatConsole.csproj", "{2FD8D4D1-4F60-4D0F-914D-FB344F7A0285}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console", "Console\Console.csproj", "{2FD8D4D1-4F60-4D0F-914D-FB344F7A0285}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringLib", "StringLib\StringLib.csproj", "{5A0ABA6B-CDEA-4B55-8BAF-D511A3BFCA40}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library", "Library\Library.csproj", "{5A0ABA6B-CDEA-4B55-8BAF-D511A3BFCA40}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{23A0432D-8C54-415B-8DD1-882C5F8D60AC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{23A0432D-8C54-415B-8DD1-882C5F8D60AC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

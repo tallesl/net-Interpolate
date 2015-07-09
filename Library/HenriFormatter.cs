@@ -6,7 +6,7 @@ using System.IO;
 using System.Web;
 using System.Web.UI;
 
-namespace StringLib
+namespace NamedFormat
 {
     public static class HenriFormatter
     {

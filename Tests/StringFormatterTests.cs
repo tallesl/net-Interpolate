@@ -1,8 +1,7 @@
 ﻿using System;
-using StringLib;
 using Xunit;
 
-namespace UnitTests
+namespace NamedFormat.Tests
 {
     public class StringFormatterTests
     {
