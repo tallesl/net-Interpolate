@@ -1,17 +1,13 @@
-﻿namespace NamedFormat
+﻿namespace NamedFormat.Haack
 {
-    public class LiteralFormat : ITextExpression
+    internal class LiteralFormat : ITextExpression
     {
-        public LiteralFormat(string literalText)
+        internal LiteralFormat(string literalText)
         {
             LiteralText = literalText;
         }
 
-        public string LiteralText
-        {
-            get;
-            private set;
-        }
+        private string LiteralText { get; set; }
 
         public string Eval(object o)
         {

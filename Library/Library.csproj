@@ -70,13 +70,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormatExpression.cs" />
+    <Compile Include="Haack\FormatExpression.cs" />
     <Compile Include="HaackFormatter.cs" />
     <Compile Include="HanselmanFormatter.cs" />
     <Compile Include="HenriFormatter.cs" />
-    <Compile Include="ITextExpression.cs" />
+    <Compile Include="Haack\ITextExpression.cs" />
     <Compile Include="JamesFormatter.cs" />
-    <Compile Include="LiteralFormat.cs" />
+    <Compile Include="Haack\LiteralFormat.cs" />
     <Compile Include="OskarFormatter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

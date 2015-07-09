@@ -51,8 +51,6 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="FormatExpressionTests.cs" />
-    <Compile Include="LiteralFormatTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StringFormatterTests.cs" />
   </ItemGroup>

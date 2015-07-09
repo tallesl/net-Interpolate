@@ -1,14 +1,14 @@
-﻿namespace NamedFormat
+﻿namespace NamedFormat.Haack
 {
     using System;
     using System.Web;
     using System.Web.UI;
 
-    public class FormatExpression : ITextExpression
+    internal class FormatExpression : ITextExpression
     {
-        bool _invalidExpression = false;
+        private bool _invalidExpression = false;
 
-        public FormatExpression(string expression)
+        internal FormatExpression(string expression)
         {
             if (!expression.StartsWith("{") || !expression.EndsWith("}"))
             {
@@ -31,17 +31,9 @@
             }
         }
 
-        public string Expression
-        {
-            get;
-            private set;
-        }
+        private string Expression { get; set; }
 
-        public string Format
-        {
-            get;
-            private set;
-        }
+        private string Format { get; set; }
 
         public string Eval(object o)
         {
