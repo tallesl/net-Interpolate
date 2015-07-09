@@ -6,6 +6,10 @@
     using System.Globalization;
     using System.Text.RegularExpressions;
 
+    /// <summary>
+    /// Oskar Austegard implementation.
+    /// http://mo.notono.us/2008/07/c-stringinject-format-strings-by-key.html
+    /// </summary>
     public static class OskarFormatter
     {
         public static string OskarFormat(this string format, object arguments)

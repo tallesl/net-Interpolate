@@ -6,6 +6,10 @@
     using System.Web;
     using System.Web.UI;
 
+    /// <summary>
+    /// Henri Wiechers implementation.
+    /// http://haacked.com/archive/2009/01/14/named-formats-redux.aspx
+    /// </summary>
     public static class HenriFormatter
     {
         public static string HenriFormat(this string format, object arguments)

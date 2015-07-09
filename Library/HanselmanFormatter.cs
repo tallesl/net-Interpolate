@@ -5,6 +5,10 @@
     using System.Text;
     using System.Text.RegularExpressions;
 
+    /// <summary>
+    /// Scott Hanselman implementation.
+    /// http://www.hanselman.com/blog/ASmarterOrPureEvilToStringWithExtensionMethods.aspx
+    /// </summary>
     public static class HanselmanFormatter
     {
         public static string HanselmanFormat(this string format, object arguments)

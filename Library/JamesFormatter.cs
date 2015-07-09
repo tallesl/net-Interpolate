@@ -6,6 +6,11 @@
     using System.Web;
     using System.Web.UI;
 
+    /// <summary>
+    /// James Newton-King implementation tweaked by Ativ Aziz.
+    /// http://james.newtonking.com/archive/2008/03/29/formatwith-2-0-string-formatting-with-named-variables
+    /// http://haacked.com/archive/2009/01/14/named-formats-redux.aspx
+    /// </summary>
     public static class JamesFormatter
     {
         public static string JamesFormat(this string format, object arguments)

@@ -5,6 +5,10 @@
     using System.Collections.Generic;
     using System.Linq;
 
+    /// <summary>
+    /// Phil Haack implementation.
+    /// http://haacked.com/archive/2009/01/04/fun-with-named-formats-string-parsing-and-edge-cases.aspx
+    /// </summary>
     public static class HaackFormatter
     {
         public static string HaackFormat(this string format, object arguments)
