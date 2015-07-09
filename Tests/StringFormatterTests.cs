@@ -1,11 +1,12 @@
-﻿using System;
-using Xunit;
-
-namespace NamedFormat.Tests
+﻿namespace NamedFormat.Tests
 {
+    using System;
+    using Xunit;
+
     public class StringFormatterTests
     {
-        static string Format(string format, object o) {
+        static string Format(string format, object o)
+        {
             // You can see how the other methods handle these unit tests 
             // by uncommenting the one you want to test.
 
@@ -141,7 +142,7 @@ namespace NamedFormat.Tests
             //arrange
             var o = new { foo = 123.45 };
 
-            
+
             //act, assert
             Assert.Throws<FormatException>(() => Format("{foo}}", o));
         }
@@ -185,7 +186,7 @@ namespace NamedFormat.Tests
 
             //act
             string result = Format("{foo}}}bar", o);
-            
+
             //assert
             Assert.Equal("123.45}bar", result);
         }

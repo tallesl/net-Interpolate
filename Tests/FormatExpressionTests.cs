@@ -1,7 +1,7 @@
-﻿using Xunit;
-
-namespace NamedFormat.Tests
+﻿namespace NamedFormat.Tests
 {
+    using Xunit;
+
     public class FormatExpressionTests
     {
         [Fact]
@@ -11,11 +11,12 @@ namespace NamedFormat.Tests
             var expr = new FormatExpression("{foo}");
 
             //assert
-            Assert.Equal(string.Empty, expr.Eval(new {foo = (object)null}));
+            Assert.Equal(string.Empty, expr.Eval(new { foo = (object)null }));
         }
 
         [Fact]
-        public void Format_WithoutColon_ReadsWholeExpression() { 
+        public void Format_WithoutColon_ReadsWholeExpression()
+        {
             //arrange
             var expr = new FormatExpression("{foo}");
 
@@ -24,7 +25,7 @@ namespace NamedFormat.Tests
         }
 
         [Fact]
-        public void Format_WithColon_ParsesoutFormat    ()
+        public void Format_WithColon_ParsesoutFormat()
         {
             //arrange
             var expr = new FormatExpression("{foo:#.##}");
@@ -34,13 +35,14 @@ namespace NamedFormat.Tests
         }
 
         [Fact]
-        public void Eval_WithNamedExpression_EvalsPropertyOfExpression() {
+        public void Eval_WithNamedExpression_EvalsPropertyOfExpression()
+        {
             //arrange
             var expr = new FormatExpression("{foo}");
 
             //act
             string result = expr.Eval(new { foo = 123 });
-            
+
             //assert
             Assert.Equal("123", result);
         }

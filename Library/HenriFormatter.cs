@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.IO;
-using System.Web;
-using System.Web.UI;
-
-namespace NamedFormat
+﻿namespace NamedFormat
 {
+    using System;
+    using System.IO;
+    using System.Text;
+    using System.Web;
+    using System.Web.UI;
+
     public static class HenriFormatter
     {
         private static string OutExpression(object source, string expression)
@@ -42,7 +40,7 @@ namespace NamedFormat
                 throw new ArgumentNullException("format");
             }
 
-            StringBuilder result = new StringBuilder(format.Length * 2);            
+            StringBuilder result = new StringBuilder(format.Length * 2);
 
             using (var reader = new StringReader(format))
             {

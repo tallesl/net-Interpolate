@@ -89,9 +89,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Library\Library.csproj">
       <Project>{5a0aba6b-cdea-4b55-8baf-d511a3bfca40}</Project>
       <Name>Library</Name>

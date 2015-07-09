@@ -1,12 +1,11 @@
-﻿
-using System;
-using System.Collections;
-using System.ComponentModel;
-using System.Globalization;
-using System.Text.RegularExpressions;
-
-namespace NamedFormat
+﻿namespace NamedFormat
 {
+    using System;
+    using System.Collections;
+    using System.ComponentModel;
+    using System.Globalization;
+    using System.Text.RegularExpressions;
+
     /// <summary>
     /// Copied from http://mo.notono.us/2008/07/c-stringinject-format-strings-by-key.html
     /// </summary>

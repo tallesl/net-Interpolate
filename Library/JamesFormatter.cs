@@ -1,11 +1,11 @@
-﻿using System;
-using System.Web;
-using System.Collections.Generic;
-using System.Text.RegularExpressions;
-using System.Web.UI;
-
-namespace NamedFormat
+﻿namespace NamedFormat
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text.RegularExpressions;
+    using System.Web;
+    using System.Web.UI;
+
     public static class JamesFormatter
     {
         public static string JamesFormat(this string format, object source)

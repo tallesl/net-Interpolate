@@ -1,11 +1,12 @@
-﻿using Xunit;
-
-namespace NamedFormat.Tests
+﻿namespace NamedFormat.Tests
 {
+    using Xunit;
+
     public class LiteralFormatTests
     {
         [Fact]
-        public void Literal_WithEscapedCloseBraces_CollapsesDoubleBraces() { 
+        public void Literal_WithEscapedCloseBraces_CollapsesDoubleBraces()
+        {
             //arrange
             var literal = new LiteralFormat("hello}}world");
             //act
