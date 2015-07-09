@@ -8,12 +8,7 @@
 
     public static class JamesFormatter
     {
-        public static string JamesFormat(this string format, object source)
-        {
-            return FormatWith(format, null, source);
-        }
-
-        public static string FormatWith(this string format, IFormatProvider provider, object source)
+        public static string JamesFormat(this string format, object arguments)
         {
             if (format == null)
                 throw new ArgumentNullException("format");
@@ -29,8 +24,8 @@
                     Group endGroup = m.Groups["end"];
 
                     values.Add((propertyGroup.Value == "0")
-                      ? source
-                      : Eval(source, propertyGroup.Value));
+                      ? arguments
+                      : Eval(arguments, propertyGroup.Value));
 
                     int openings = startGroup.Captures.Count;
                     int closings = endGroup.Captures.Count;
@@ -42,7 +37,7 @@
                 },
                 RegexOptions.Compiled | RegexOptions.CultureInvariant | RegexOptions.IgnoreCase);
 
-            return string.Format(provider, rewrittenFormat, values.ToArray());
+            return string.Format(rewrittenFormat, values.ToArray());
         }
 
         private static object Eval(object source, string expression)

@@ -6,30 +6,12 @@
     using System.Globalization;
     using System.Text.RegularExpressions;
 
-    /// <summary>
-    /// Copied from http://mo.notono.us/2008/07/c-stringinject-format-strings-by-key.html
-    /// </summary>
     public static class OskarFormatter
     {
-        /// <summary>
-        /// Extension method that replaces keys in a string with the values of matching object properties.
-        /// <remarks>Uses <see cref="String.Format()"/> internally; custom formats should match those used for that method.</remarks>
-        /// </summary>
-        /// <param name="formatString">The format string, containing keys like {foo} and {foo:SomeFormat}.</param>
-        /// <param name="injectionObject">The object whose properties should be injected in the string</param>
-        /// <returns>A version of the formatString string with keys replaced by (formatted) key values.</returns>
-        public static string OskarFormat(this string formatString, object injectionObject)
+        public static string OskarFormat(this string format, object arguments)
         {
-            return formatString.Inject(GetPropertyHash(injectionObject));
-        }
+            Hashtable attributes = GetPropertyHash(arguments);
 
-        public static string Inject(this string format, IDictionary dictionary)
-        {
-            return format.Inject(new Hashtable(dictionary));
-        }
-
-        public static string Inject(this string format, Hashtable attributes)
-        {
             string result = format;
             if (attributes == null || format == null)
                 return result;
@@ -41,7 +23,7 @@
             return result;
         }
 
-        public static string InjectSingleValue(this string format, string key, object replacementValue)
+        private static string InjectSingleValue(this string format, string key, object replacementValue)
         {
             string result = format;
             //regex replacement of key with value, where the generic key format is:
@@ -68,12 +50,6 @@
             return result;
         }
 
-        /// <summary>
-        /// Creates a HashTable based on current object state.
-        /// <remarks>Copied from the MVCToolkit HtmlExtensionUtility class</remarks>
-        /// </summary>
-        /// <param name="properties">The object from which to get the properties</param>
-        /// <returns>A <see cref="Hashtable"/> containing the object instance's property names and their values</returns>
         private static Hashtable GetPropertyHash(object properties)
         {
             Hashtable values = null;

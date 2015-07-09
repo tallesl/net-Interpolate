@@ -5,28 +5,20 @@
     using System.Text;
     using System.Text.RegularExpressions;
 
-    /// <summary>
-    /// Copied from http://www.hanselman.com/blog/CommentView.aspx?guid=fde45b51-9d12-46fd-b877-da6172fe1791
-    /// </summary>
     public static class HanselmanFormatter
     {
-        public static string HanselmanFormat(this string aFormat, object anObject)
-        {
-            return anObject.HanselmanFormat(aFormat, null);
-        }
-
-        public static string HanselmanFormat(this object anObject, string aFormat, IFormatProvider formatProvider)
+        public static string HanselmanFormat(this string format, object arguments)
         {
             StringBuilder sb = new StringBuilder();
-            Type type = anObject.GetType();
+            Type type = arguments.GetType();
             Regex reg = new Regex(@"({)([^}]+)(})", RegexOptions.IgnoreCase);
-            MatchCollection mc = reg.Matches(aFormat);
+            MatchCollection mc = reg.Matches(format);
             int startIndex = 0;
             foreach (Match m in mc)
             {
                 Group g = m.Groups[2]; //it's second in the match between { and }  
                 int length = g.Index - startIndex - 1;
-                sb.Append(aFormat.Substring(startIndex, length));
+                sb.Append(format.Substring(startIndex, length));
 
                 string toGet = String.Empty;
                 string toFormat = String.Empty;
@@ -48,7 +40,7 @@
                 if (retrievedProperty != null)
                 {
                     retrievedType = retrievedProperty.PropertyType;
-                    retrievedObject = retrievedProperty.GetValue(anObject, null);
+                    retrievedObject = retrievedProperty.GetValue(arguments, null);
                 }
                 else //try fields  
                 {
@@ -56,7 +48,7 @@
                     if (retrievedField != null)
                     {
                         retrievedType = retrievedField.FieldType;
-                        retrievedObject = retrievedField.GetValue(anObject);
+                        retrievedObject = retrievedField.GetValue(arguments);
                     }
                 }
 
@@ -75,7 +67,7 @@
                         result = retrievedType.InvokeMember("ToString",
                             BindingFlags.Public | BindingFlags.NonPublic |
                             BindingFlags.Instance | BindingFlags.InvokeMethod | BindingFlags.IgnoreCase
-                            , null, retrievedObject, new object[] { toFormat, formatProvider }) as string;
+                            , null, retrievedObject, new object[] { toFormat }) as string;
                     }
                     sb.Append(result);
                 }
@@ -87,9 +79,9 @@
                 }
                 startIndex = g.Index + g.Length + 1;
             }
-            if (startIndex < aFormat.Length) //include the rest (end) of the string  
+            if (startIndex < format.Length) //include the rest (end) of the string  
             {
-                sb.Append(aFormat.Substring(startIndex));
+                sb.Append(format.Substring(startIndex));
             }
             return sb.ToString();
         }

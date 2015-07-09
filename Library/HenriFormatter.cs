@@ -8,32 +8,7 @@
 
     public static class HenriFormatter
     {
-        private static string OutExpression(object source, string expression)
-        {
-            string format = "";
-
-            int colonIndex = expression.IndexOf(':');
-            if (colonIndex > 0)
-            {
-                format = expression.Substring(colonIndex + 1);
-                expression = expression.Substring(0, colonIndex);
-            }
-
-            try
-            {
-                if (String.IsNullOrEmpty(format))
-                {
-                    return (DataBinder.Eval(source, expression) ?? "").ToString();
-                }
-                return DataBinder.Eval(source, expression, "{0:" + format + "}") ?? "";
-            }
-            catch (HttpException)
-            {
-                throw new FormatException();
-            }
-        }
-
-        public static string HenriFormat(this string format, object source)
+        public static string HenriFormat(this string format, object arguments)
         {
             if (format == null)
             {
@@ -93,7 +68,7 @@
                                 case -1:
                                     throw new FormatException();
                                 case '}':
-                                    result.Append(OutExpression(source, expression.ToString()));
+                                    result.Append(OutExpression(arguments, expression.ToString()));
                                     expression.Length = 0;
                                     state = State.OutsideExpression;
                                     break;
@@ -121,6 +96,31 @@
             }
 
             return result.ToString();
+        }
+
+        private static string OutExpression(object source, string expression)
+        {
+            string format = "";
+
+            int colonIndex = expression.IndexOf(':');
+            if (colonIndex > 0)
+            {
+                format = expression.Substring(colonIndex + 1);
+                expression = expression.Substring(0, colonIndex);
+            }
+
+            try
+            {
+                if (String.IsNullOrEmpty(format))
+                {
+                    return (DataBinder.Eval(source, expression) ?? "").ToString();
+                }
+                return DataBinder.Eval(source, expression, "{0:" + format + "}") ?? "";
+            }
+            catch (HttpException)
+            {
+                throw new FormatException();
+            }
         }
 
         private enum State

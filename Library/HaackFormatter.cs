@@ -7,14 +7,14 @@
 
     public static class HaackFormatter
     {
-        public static string HaackFormat(this string format, object source)
+        public static string HaackFormat(this string format, object arguments)
         {
             if (format == null)
             {
                 throw new ArgumentNullException("format");
             }
             var formattedStrings = (from expression in SplitFormat(format)
-                                    select expression.Eval(source)).ToArray();
+                                    select expression.Eval(arguments)).ToArray();
             return String.Join("", formattedStrings);
         }
 
@@ -61,7 +61,7 @@
             } while (expStartIndex > -1);
         }
 
-        static int IndexOfExpressionStart(this string format, int startIndex)
+        private static int IndexOfExpressionStart(this string format, int startIndex)
         {
             int index = format.IndexOf('{', startIndex);
             if (index == -1)
@@ -82,7 +82,7 @@
             return index;
         }
 
-        static int IndexOfExpressionEnd(this string format, int startIndex)
+        private static int IndexOfExpressionEnd(this string format, int startIndex)
         {
             int endBraceIndex = format.IndexOf('}', startIndex);
             if (endBraceIndex == -1)
