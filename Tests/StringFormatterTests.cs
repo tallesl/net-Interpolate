@@ -2,12 +2,16 @@
 {
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System;
+    using System.Globalization;
+    using System.Threading;
 
     [TestClass]
     public class StringFormatterTests
     {
         static string Format(string format, object o)
         {
+            Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
+
             // You can see how the other methods handle these unit tests 
             // by uncommenting the one you want to test.
 
@@ -72,6 +76,7 @@
         [TestMethod]
         public void Format_WithEmptyString_ReturnsEmptyString()
         {
+            //arrange
             var o = new { foo = 123.45 };
 
             //act
@@ -108,6 +113,7 @@
         [TestMethod]
         public void Format_WithSubProperty_ReturnsValueOfSubProperty()
         {
+            //arrange
             var o = new { foo = new { bar = 123.45 } };
 
             //act
@@ -145,7 +151,6 @@
         {
             //arrange
             var o = new { foo = 123.45 };
-
 
             //act
             Format("{foo}}", o);
@@ -188,6 +193,7 @@
         [TestMethod]
         public void Format_WithEndBraceFollowedByEscapedEndFormatBrace_FormatsCorrectly()
         {
+            //arrange
             var o = new { foo = 123.45 };
 
             //act
@@ -200,6 +206,7 @@
         [TestMethod]
         public void Format_WithEndBraceFollowedByDoubleEscapedEndFormatBrace_FormatsCorrectly()
         {
+            //arrange
             var o = new { foo = 123.45 };
 
             //act
@@ -213,7 +220,7 @@
         [ExpectedException(typeof(ArgumentNullException))]
         public void Format_WithNullFormatString_ThrowsArgumentNullException()
         {
-            //arrange, act, assert
+            //act
             Format(null, 123);
         }
     }

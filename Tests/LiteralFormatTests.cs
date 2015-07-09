@@ -10,8 +10,10 @@
         {
             //arrange
             var literal = new LiteralFormat("hello}}world");
+
             //act
             string result = literal.Eval(null);
+
             //assert
             Assert.AreEqual("hello}world", result);
         }
@@ -21,8 +23,10 @@
         {
             //arrange
             var literal = new LiteralFormat("hello{{world");
+
             //act
             string result = literal.Eval(null);
+
             //assert
             Assert.AreEqual("hello{world", result);
         }

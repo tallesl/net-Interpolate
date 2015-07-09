@@ -1,6 +1,8 @@
 ﻿namespace NamedFormat.Tests
 {
     using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using System.Globalization;
+    using System.Threading;
 
     [TestClass]
     public class FormatExpressionTests
@@ -52,6 +54,7 @@
         public void Eval_WithNamedExpressionAndFormat_EvalsPropertyOfExpression()
         {
             //arrange
+            Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
             var expr = new FormatExpression("{foo:#.##}");
 
             //act
