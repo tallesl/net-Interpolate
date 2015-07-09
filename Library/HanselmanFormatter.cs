@@ -10,12 +10,12 @@
     /// </summary>
     public static class HanselmanFormatter
     {
-        public static string HanselFormat(this object anObject, string aFormat)
+        public static string HanselmanFormat(this string aFormat, object anObject)
         {
-            return anObject.HanselFormat(aFormat, null);
+            return anObject.HanselmanFormat(aFormat, null);
         }
 
-        public static string HanselFormat(this object anObject, string aFormat, IFormatProvider formatProvider)
+        public static string HanselmanFormat(this object anObject, string aFormat, IFormatProvider formatProvider)
         {
             StringBuilder sb = new StringBuilder();
             Type type = anObject.GetType();
