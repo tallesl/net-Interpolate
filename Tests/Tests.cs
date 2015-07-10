@@ -6,13 +6,13 @@
     using System.Threading;
 
     [TestClass]
-    public class StringFormatterTests
+    public class Tests
     {
         static string Format(string format, object o)
         {
             Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
 
-            // You can see how the other methods handle these unit tests 
+            // You can see how the other methods handle these unit tests
             // by uncommenting the one you want to test.
 
             //return o.HanselFormat(format);
