@@ -3,7 +3,7 @@
 [nuget]:     http://badge.fury.io/nu/NamedFormat
 [nuget-img]: https://badge.fury.io/nu/NamedFormat.png
 
-[Haack's][haack], [Hanselman's][hanselman], [Henri's][henri], [James'][james] and [Oskar's][oskar] implementations of custom named place holders string formatting (*[string.Format][string.Format] with names*).
+[Haack's][haack], [Hanselman's][hanselman], [Henri's][henri], [James'][james] and [Oskar's][oskar] implementations of custom named placeholders string formatting (*[string.Format][string.Format] with names*).
 
 ```cs
 Console.WriteLine("I like to {what}, {what}.".HaackFormat(new { what = "move it" }));
