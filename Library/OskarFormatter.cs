@@ -1,4 +1,4 @@
-﻿namespace NamedFormat
+﻿namespace InterpolateLibrary
 {
     using System;
     using System.Collections;

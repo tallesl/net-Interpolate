@@ -8,8 +8,8 @@
     <ProjectGuid>{2FD8D4D1-4F60-4D0F-914D-FB344F7A0285}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NamedFormat.Console</RootNamespace>
-    <AssemblyName>NamedFormat.Console</AssemblyName>
+    <RootNamespace>InterpolateLibrary.Console</RootNamespace>
+    <AssemblyName>Interpolate.Console</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <FileUpgradeFlags>

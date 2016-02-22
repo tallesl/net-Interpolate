@@ -1,4 +1,4 @@
-﻿namespace NamedFormat.Haack
+﻿namespace InterpolateLibrary.Haack
 {
     internal class LiteralFormat : ITextExpression
     {

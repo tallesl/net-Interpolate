@@ -1,4 +1,4 @@
-﻿namespace NamedFormat.Tests
+﻿namespace InterpolateLibrary.Tests
 {
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System;

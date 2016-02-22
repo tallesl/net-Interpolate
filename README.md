@@ -1,8 +1,10 @@
-# NamedFormat
+# Interpolate
 
+[![][build-img]][build]
 [![][nuget-img]][nuget]
 
-If you can't get your hands on [C# 6] yet, here's [Haack's], [Hanselman's], [Henri's], [James'] and [Oskar's] implementations of string interpolation ("[string.Format] with names").
+If you can't get your hands on [C# 6] yet, here's [Haack's], [Hanselman's], [Henri's], [James'] and [Oskar's]
+implementations of string interpolation ("[string.Format] with names").
 
 The [original solution] is from Phil Haack, I tweaked few things and made a NuGet package for it.
 
@@ -14,8 +16,10 @@ Console.WriteLine("I like to {what}, {what}.".JamesFormat(new { what = "move it"
 Console.WriteLine("I like to {what}, {what}.".OskarFormat(new { what = "move it" }));
 ```
 
-[nuget]:             http://badge.fury.io/nu/NamedFormat
-[nuget-img]:         https://badge.fury.io/nu/NamedFormat.png
+[build]:             https://ci.appveyor.com/project/TallesL/net-interpolate
+[build-img]:         https://ci.appveyor.com/api/projects/status/github/tallesl/net-interpolate?svg=true
+[nuget]:             https://www.nuget.org/packages/Interpolate
+[nuget-img]:         https://badge.fury.io/nu/Interpolate.svg
 [C# 6]:              https://msdn.microsoft.com/library/dn961160
 [Haack's]:           http://haacked.com/archive/2009/01/04/fun-with-named-formats-string-parsing-and-edge-cases.aspx
 [Hanselman's]:       http://hanselman.com/blog/ASmarterOrPureEvilToStringWithExtensionMethods.aspx

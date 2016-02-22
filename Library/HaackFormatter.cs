@@ -1,6 +1,6 @@
-﻿namespace NamedFormat
+﻿namespace InterpolateLibrary
 {
-    using NamedFormat.Haack;
+    using InterpolateLibrary.Haack;
     using System;
     using System.Collections.Generic;
     using System.Linq;

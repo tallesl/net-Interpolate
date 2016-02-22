@@ -1,4 +1,4 @@
-﻿namespace NamedFormat.Console
+﻿namespace InterpolateLibrary.Console
 {
     using System;
     using System.Diagnostics;
