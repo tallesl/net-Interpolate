@@ -12,14 +12,13 @@
         {
             Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
 
-            // You can see how the other methods handle these unit tests
-            // by uncommenting the one you want to test.
+            // Change the comments bellow to check how the method performs:
 
-            //return o.HanselFormat(format);
-            //return format.OskarFormat(o);
-            return format.JamesFormat(o);
+            return format.HaackFormat(o);
+            //return format.HanselmanFormat(o);
             //return format.HenriFormat(o);
-            //return format.HaackFormat(o);
+            //return format.JamesFormat(o);
+            //return format.OskarFormat(o);
         }
 
         [TestMethod]
