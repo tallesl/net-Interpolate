@@ -9,6 +9,8 @@ implementations of string interpolation.
 The [original solution] is from Phil Haack, I tweaked few things and made a NuGet package for it.
 
 ```cs
+using InterpolateLibrary;
+
 Console.WriteLine("I like to {what}, {what}".HaackFormat(new { what = "move it" }));
 Console.WriteLine("I like to {what}, {what}".HanselmanFormat(new { what = "move it" }));
 Console.WriteLine("I like to {what}, {what}".HenriFormat(new { what = "move it" }));
